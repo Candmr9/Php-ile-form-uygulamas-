@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>İş Başvuru Formu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>İş Başvuru Formu</h1>
+        <form action="submit_form.php" method="post">
+            <div class="form-group">
+                <label>Adınız ve Soyadınız:</label>
+                <input type="text" name="ad_soyad" required>
+            </div>
+
+            <div class="form-group">
+                <label>Doğum Yeri ve Tarihi:</label>
+                <div class="input-group">
+                    <input type="text" name="dogum_yeri_tarihi" required>
+                    <select name="dogum_yili" id="dogum_yili">
+                        <option value="2000">2000</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Mail Adresiniz:</label>
+                <input type="email" name="mail_adresi" required>
+            </div>
+
+            <div class="form-group">
+                <label>Cep Telefonu Numarası:</label>
+                <input type="text" name="cep_telefonu" required>
+            </div>
+
+            <div class="form-group">
+                <label>Ev Telefonu Numarası:</label>
+                <input type="text" name="ev_telefonu" required>
+            </div>
+
+            <div class="form-group">
+                <label>Adres:</label>
+                <textarea name="adres" required></textarea>
+            </div>
+
+            <!-- Mezun Olduğu Okul Bilgisi -->
+            <div class="form-group">
+                <label>En Son Mezun Olduğunuz Okul:</label>
+                <input type="text" name="mezun_okul" required>
+            </div>
+
+            <!-- Daha Önce Çalıştığı Yerler ve Tarihleri -->
+            <div class="form-group">
+                <label>Daha Önce Çalıştığınız Yerler ve Tarihleri:</label>
+                <textarea name="calistigi_yerler_ve_tarihler" required></textarea>
+            </div>
+
+            <!-- Yetenekler -->
+            <div class="form-group">
+                <label>Yetenekleriniz:</label>
+                <textarea name="yetenekler" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Cinsiyetiniz:</label>
+                <div class="radio-group">
+                    <input type="radio" name="cinsiyet" value="Kadın" required>Kadın
+                    <input type="radio" name="cinsiyet" value="Erkek" required>Erkek
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Medeni Haliniz:</label>
+                <div class="radio-group">
+                    <input type="radio" name="medeni_hal" value="Bekar" required>Bekar
+                    <input type="radio" name="medeni_hal" value="Evli" required>Evli
+                    <input type="radio" name="medeni_hal" value="Boşanmış" required>Boşanmış
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Ehliyet:</label>
+                <div class="radio-group">
+                    <input type="radio" name="ehliyet" value="YOK" required>YOK
+                    <input type="radio" name="ehliyet" value="VAR" required>VAR
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Askerlik Durumu:</label>
+                <div class="radio-group">
+                    <input type="radio" name="askerlik_durumu" value="Yapılmadı" required>Yapılmadı
+                    <input type="radio" name="askerlik_durumu" value="Muaf" required>Muaf
+                    <input type="radio" name="askerlik_durumu" value="Yapıldı" required>Yapıldı
+                </div>
+            </div>
+
+            <input type="submit" value="Gönder">
+        </form>
+    </div>
+
+    <script>
+        // Doğum yılı seçeneklerini ekleyen JavaScript kodu
+        var select = document.getElementById("dogum_yili");
+        var currentYear = new Date().getFullYear();
+        for (var i = currentYear; i >= 1970; i--) {
+            var option = document.createElement("option");
+            option.text = i;
+            option.value = i;
+            select.appendChild(option);
+        }
+    </script>
+    
+</body>
+</html>
+
+
+
+
